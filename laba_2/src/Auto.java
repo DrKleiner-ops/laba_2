@@ -7,7 +7,8 @@ public class Auto {      //Добавить к гаражу возможност
     }
     public void setMaxSpeed(int speed){ //открытая функция (метод класса) для задания
         maxSpeed=speed; //значения максимальной скорости автомобиля
-    }public void setGosNumber (int number){ //открытая функция (метод класса) для задания
+    }
+    public void setGosNumber (int number){ //открытая функция (метод класса) для задания
         maxSpeed=number; //значения гос. номера автомобиля
     }
     public int getMaxSpeed(){ //открытая функция (метод класса) для вывода значения

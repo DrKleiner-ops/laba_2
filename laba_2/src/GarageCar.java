@@ -20,4 +20,8 @@ public class GarageCar {
             System.out.println("\t"+a.toString());
         }
     }
+    public void remGarage(Auto r){
+        masCar.remove(r);
+
+    }
 }
