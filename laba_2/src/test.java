@@ -27,6 +27,7 @@ public class test {
         myCar2.setNumDoors(s);
         System.out.print("Введите признак полного привода легкового авто (true/false): ");
         Boolean f=in.nextBoolean();
+        myCar2.setFullTime(f);
         System.out.println();
         System.out.println("Первый легковой автомобиль: "+myCar1.toString());
         System.out.println("Второй легковой автомобиль: "+myCar2.toString());

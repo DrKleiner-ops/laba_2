@@ -27,8 +27,8 @@ public class Car extends Auto{//файл Car.java
     public int getNumDoors(){
         return numDoors;
     }
-    public void setFullTime(Boolean b){
-        fullTime=b;
+    public void setFullTime(Boolean f){
+        fullTime=f;
     }
     public Boolean isFullTime(){
         return fullTime;
