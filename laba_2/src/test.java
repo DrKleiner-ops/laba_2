@@ -1,23 +1,26 @@
 import java.util.Scanner;
 public class test {
+    //Добавить к гаражу возможность удаления из него машины,
+    // а к классу Auto добавить поле с гос. номером.
     public static void main(String[] args) {
         Auto myAuto1=new Auto();
         Scanner in = new Scanner(System.in);
-        System.out.print("Введите фирму: ");
+        /**System.out.print("Введите фирму: ");
         String nazv=in.next();
         myAuto1.setFirm(nazv);
         System.out.print("Введите максимальную скорость: ");
-        int s=in.nextInt();
         myAuto1.setMaxSpeed(s);
         System.out.println("Какой-то автомобиль: "+myAuto1.getFirm()+" "+myAuto1.getMaxSpeed());
-        System.out.println();
+**/
+       // int s=in.nextInt();
+       // System.out.println();
         Car myCar1=new Car("Ford", 200,"Mustang",2,false);
         Car myCar2=new Car();
         System.out.print("Введите фирму-производитель легкового авто: ");
-        nazv=in.next();
+        String nazv=in.next();
         myCar2.setFirm(nazv);
         System.out.print("Введите максимальную скорость легкового авто: ");
-        s=in.nextInt();
+        int s=in.nextInt();
         myCar2.setMaxSpeed(s);
         System.out.print("Введите модель легкового авто: ");
         nazv=in.next();
