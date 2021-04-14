@@ -19,6 +19,9 @@ public class test {
         System.out.print("Введите фирму-производитель легкового авто: ");
         String nazv=in.next();
         myCar2.setFirm(nazv);
+        System.out.print("Введите гос. номер легкового авто: ");
+        String nom=in.next(); //метод next() позволяет вводить строки, но без пробелов
+        myCar2.setNumber(nom);
         System.out.print("Введите максимальную скорость легкового авто: ");
         int s=in.nextInt();
         myCar2.setMaxSpeed(s);
