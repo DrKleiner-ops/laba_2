@@ -9,8 +9,8 @@ public class Car extends Auto{//файл Car.java
         fullTime=false;
     }
 
-    public Car(String firma, int speed, String name, int n, Boolean f){
-        super(firma,speed); //вызываем конструктор класса-родителя с параметрами (см. класс Auto)
+    public Car(String firma, String number, int speed, String name, int n, Boolean f){
+        super(firma,number,speed); //вызываем конструктор класса-родителя с параметрами (см. класс Auto)
         model=name; // добавляем инициализацию новых членов
         numDoors=n;
         fullTime=f;
@@ -34,6 +34,6 @@ public class Car extends Auto{//файл Car.java
         return fullTime;
     }
     public String toString(){
-        return getFirm()+" "+getMaxSpeed()+" "+model+" "+numDoors+" "+fullTime;
+        return getFirm()+" "+getNumber()+" "+getMaxSpeed()+" "+model+" "+numDoors+" "+fullTime;
     }
 }

@@ -9,8 +9,8 @@ public class Truck extends Auto{
         power=0;
         trailer=false;
     }
-    public Truck(String firma, int speed, String name, int n, Boolean f){
-        super(firma,speed);
+    public Truck(String firma,String number, int speed, String name, int n, Boolean f){
+        super(firma,number,speed);
         model=name;
         power=n;
         trailer=f;
@@ -39,6 +39,9 @@ public class Truck extends Auto{
         System.out.print("Введите фирму-производитель грузового авто: ");
         String nazv=in.next(); //метод next() позволяет вводить строки, но без пробелов
         setFirm(nazv);
+        System.out.print("Введите гос. номер грузового авто: ");
+        String nom=in.next(); //метод next() позволяет вводить строки, но без пробелов
+        setNumber(nom);
         System.out.print("Введите максимальную скорость грузового авто: ");
         int s=in.nextInt();
         setMaxSpeed(s);
@@ -51,7 +54,7 @@ public class Truck extends Auto{
         System.out.println();
     }
     public String toString(){
-        return "\n\tГрузовик"+"\n\t"+"Фирма: "+getFirm()+"\n\t"+"Максимальная скорость: "
+        return "\n\tГрузовик"+"\n\t"+"Фирма: "+getFirm()+"\n\t"+"Номер: "+getNumber()+"\n\t"+"Максимальная скорость: "
                 +getMaxSpeed()+ "\n\t"+"Модель: "+model+"\n\t"+"Мощность: "+power+"\n\t"+"Признак прицепа: "
                 +trailer+"\n";
     }

@@ -14,7 +14,7 @@ public class test {
 **/
        // int s=in.nextInt();
        // System.out.println();
-        Car myCar1=new Car("Ford", 200,"Mustang",2,false);
+        Car myCar1=new Car("Ford","АЕ404А", 200,"Mustang",2,false);
         Car myCar2=new Car();
         System.out.print("Введите фирму-производитель легкового авто: ");
         String nazv=in.next();
