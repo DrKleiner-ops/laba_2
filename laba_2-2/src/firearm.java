@@ -51,9 +51,9 @@ public class firearm extends weapon {
         String stran = in.next(); //метод next() позволяет вводить строки, но без пробелов
         setProducerCountry(stran);
         System.out.print("Введите тип огнестрельного оружия: ");
-        String tip = in.next(); //метод next() позволяет вводить строки, но без пробелов
+        Type = in.next(); //метод next() позволяет вводить строки, но без пробелов
         System.out.print("Введите модель огнестрельного оружия: ");
-        String mo = in.next();
+        Model = in.next();
         System.out.print("Серийный номер: ");
         String ser= in.next();
         setSerialNumber(ser);
@@ -64,4 +64,11 @@ public class firearm extends weapon {
         MagazineSize = in.nextInt();
         System.out.println();
     }
+
+    public String toString() {
+        return "\n\tОгнестрельное оружие" + "\n\t" + "Страна производитель: " + getProducerCountry() + "\n\t" + "Тип оружия: " + Type + "\n\t" + "Серийный номер: "
+                + getSerialNumber() + "\n\t" + "Модель: " + Model + "\n\t" + "Размер магазина: " + MagazineSize + "\n\t" + "Находится ли на вооружении: "
+                + getInService() + "\n";
+    }
+
 }
