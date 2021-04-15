@@ -1,26 +1,32 @@
 import java.util.ArrayList;//нужно для работы с классом ArrayList
 
 public class GarageCar {
-    private ArrayList<Auto> masCar=new ArrayList<Auto>();//массив с машинами
-    public void addCar(Auto m){//метод для добавления машины в гараж
+    private ArrayList<Auto> masCar = new ArrayList<Auto>();//массив с машинами
+
+    public void addCar(Auto m) {//метод для добавления машины в гараж
         masCar.add(m);
     }
-    public GarageCar (){
+
+    public GarageCar() {
     }
-    public Boolean findCar(Auto m){ //для выяснения – есть ли машина m в гараже
+
+    public Boolean findCar(Auto m) { //для выяснения – есть ли машина m в гараже
         return masCar.contains(m);
     }
-    public GarageCar(ArrayList< Auto> n){//конструктор для внесения существующего списка машин
+
+    public GarageCar(ArrayList<Auto> n) {//конструктор для внесения существующего списка машин
 //в гараж
-        masCar=n;
+        masCar = n;
     }
+
     public void printGarage() { //для вывода на экран списка машин в гараже
         System.out.println("В гараже: ");
-        for (Auto a:masCar){ //
-            System.out.println("\t"+a.toString());
+        for (Auto a : masCar) { //
+            System.out.println("\t" + a.toString());
         }
     }
-    public void remGarage(Auto r){
+
+    public void remGarage(Auto r) {
         masCar.remove(r);
 
     }
