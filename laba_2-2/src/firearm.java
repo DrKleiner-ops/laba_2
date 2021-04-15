@@ -1,23 +1,23 @@
 import java.util.Scanner;
 
 public class firearm extends weapon {
-    private String type;
-    private String model;
-    private int magazineSize;
+    private String Type;
+    private String Model;
+    private int MagazineSize;
 
 
     public firearm() {
         super();
-        type = "";
-        model = "";
-        magazineSize = 0;
+        Type = " ";
+        Model = " ";
+        MagazineSize = 0;
     }
 
-    public firearm(String type, String model, String SerialNumber , String ProducerCountry, int n, Boolean f) {
-        super(firma, number, speed);
-        model = name;
-        power = n;
-        trailer = f;
+    public firearm(String number  , String country,  Boolean s, String typ, String mod, int size) {
+        super(number, country, s);
+        Type = typ;
+        Model = mod;
+        MagazineSize = size;
     }
 
 

@@ -27,4 +27,16 @@ public class weapon {
         return inService;
     }
 
+    public weapon() {
+        SerialNumber = "Нет номера";
+        ProducerCountry = "Нет производителя";
+        inService = false;
+    }
+
+    public weapon(String number, String country, boolean s){
+        SerialNumber = number;
+        ProducerCountry = country;
+        inService = s;
+    }
+
 }
