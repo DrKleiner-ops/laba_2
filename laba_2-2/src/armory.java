@@ -33,7 +33,7 @@ public class armory {
         System.out.println("Проверка оружия на принадлежность");
 
         for (weapon i : masWeapon) {
-          //  Scanner in = new Scanner(System.in);
+            //  Scanner in = new Scanner(System.in);
 
             if (i instanceof firearm) {
                 System.out.println("Это огнестрельное оружие");
@@ -45,22 +45,22 @@ public class armory {
 
     public void numberOfFire() {
         int n = 0;
-        for (weapon a : masWeapon){
+        for (weapon a : masWeapon) {
             if (a instanceof firearm)
                 n++;
         }
-        System.out.println("Огнестрельного оружия в оружейной "+n);
+        System.out.println("Огнестрельного оружия в оружейной " + n);
 
     }
 
 
     public void numberOfMelee() {
         int n = 0;
-        for (weapon a : masWeapon){
+        for (weapon a : masWeapon) {
             if (a instanceof meleeWeapon)
                 n++;
         }
-        System.out.println("Холодного оружия в оружейной "+n);
+        System.out.println("Холодного оружия в оружейной " + n);
 
     }
 
@@ -69,16 +69,17 @@ public class armory {
 
     }
 
-  public void weaponIndex(weapon i){
+    public void weaponIndex(weapon i) {
         masWeapon.indexOf(i);
-     // int mas[];
-      int ind = masWeapon.indexOf(i);
-     //return ind;
-inq = ind;
-      //weapon index = masWeapon.get(ind);
-      //System.out.println(index);
-  }
-  public int getindex(){
+        // int mas[];
+        int ind = masWeapon.indexOf(i);
+        //return ind;
+        inq = ind;
+        //weapon index = masWeapon.get(ind);
+        //System.out.println(index);
+    }
+
+    public int getindex() {
         return inq;
-  }
+    }
 }

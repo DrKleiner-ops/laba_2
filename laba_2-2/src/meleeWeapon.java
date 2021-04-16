@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-public class meleeWeapon extends weapon{
+public class meleeWeapon extends weapon {
     private int Size;
     private String Vid;
     private int Weight;
-
 
 
     public meleeWeapon() {
@@ -14,34 +13,34 @@ public class meleeWeapon extends weapon{
         Weight = 0;
     }
 
-    public meleeWeapon(String number  , String country,  Boolean s, int dli, String vid, int ves) {
+    public meleeWeapon(String number, String country, Boolean s, int dli, String vid, int ves) {
         super(number, country, s);
         Size = dli;
         Vid = vid;
         Weight = ves;
     }
 
-    public void setSize(int dli){
-        Size=dli;
+    public void setSize(int dli) {
+        Size = dli;
     }
 
-    public int getSize(){
+    public int getSize() {
         return Size;
     }
 
-    public void setWeight(int ves){
+    public void setWeight(int ves) {
         Weight = ves;
     }
 
-    public int getWeight(){
+    public int getWeight() {
         return Weight;
     }
 
-    public void setVid(String vid){
-        Vid=vid;
+    public void setVid(String vid) {
+        Vid = vid;
     }
 
-    public String getVid(){
+    public String getVid() {
         return Vid;
     }
 
@@ -60,7 +59,7 @@ public class meleeWeapon extends weapon{
         Vid = in.next();
 
         System.out.print("Серийный номер: ");
-        String ser= in.next();
+        String ser = in.next();
         setSerialNumber(ser);
 
         System.out.print("Введите размер холодного оружия: ");

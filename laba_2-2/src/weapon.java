@@ -33,7 +33,7 @@ public class weapon {
         inService = false;
     }
 
-    public weapon(String number, String country, boolean s){
+    public weapon(String number, String country, boolean s) {
         SerialNumber = number;
         ProducerCountry = country;
         inService = s;

@@ -13,34 +13,34 @@ public class firearm extends weapon {
         MagazineSize = 0;
     }
 
-    public firearm(String number  , String country,  Boolean s, String typ, String mod, int size) {
+    public firearm(String number, String country, Boolean s, String typ, String mod, int size) {
         super(number, country, s);
         Type = typ;
         Model = mod;
         MagazineSize = size;
     }
 
-   public void setType(String typ){
-        Type=typ;
-   }
-
-   public String getType(){
-        return Type;
-   }
-
-    public void setModel(String mod){
-        Model=mod;
+    public void setType(String typ) {
+        Type = typ;
     }
 
-    public String getModel(){
+    public String getType() {
+        return Type;
+    }
+
+    public void setModel(String mod) {
+        Model = mod;
+    }
+
+    public String getModel() {
         return Model;
     }
 
-    public void setMagazineSize(int size){
-        MagazineSize=size;
+    public void setMagazineSize(int size) {
+        MagazineSize = size;
     }
 
-    public int getMagazineSize(){
+    public int getMagazineSize() {
         return MagazineSize;
     }
 
@@ -59,7 +59,7 @@ public class firearm extends weapon {
         Model = in.next();
 
         System.out.print("Серийный номер: ");
-        String ser= in.next();
+        String ser = in.next();
         setSerialNumber(ser);
 
         System.out.print("Введите размер магазина: ");
