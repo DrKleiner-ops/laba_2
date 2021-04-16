@@ -45,24 +45,30 @@ public class meleeWeapon extends weapon{
         return Vid;
     }
 
-    public void setAllInfo() {
+    public void setAllInfoMelee() {
 
         Scanner in = new Scanner(System.in);
+
         System.out.print("Введите страну-производитель холодного оружия: ");
         String strana = in.next(); //метод next() позволяет вводить строки, но без пробелов
         setProducerCountry(strana);
+
         System.out.print("Введите вес холодного оружия: ");
         Weight = in.nextInt(); //метод next() позволяет вводить строки, но без пробелов
+
         System.out.print("Введите вид холодного оружия: ");
         Vid = in.next();
+
         System.out.print("Серийный номер: ");
         String ser= in.next();
         setSerialNumber(ser);
+
+        System.out.print("Введите размер холодного оружия: ");
+        Size = in.nextInt();
+
         System.out.print("Находится ли это оружие на вооружении? (true/false): ");
         boolean v = in.nextBoolean();
         setInService(v);
-        System.out.print("Введите размер холодного оружия: ");
-        Size = in.nextInt();
         System.out.println();
     }
 
