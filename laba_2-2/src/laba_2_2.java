@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class laba_2_2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = 0;
+        int n = 0, ind;
         boolean o;
         boolean p = true;
         armory myArmory = new armory();

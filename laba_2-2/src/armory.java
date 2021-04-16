@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class armory {
     private ArrayList<weapon> masWeapon = new ArrayList<weapon>();//массив с оружием
+    int inq;
 
     public void addWeapon(weapon m) {//метод для добавления
         masWeapon.add(m);
@@ -51,9 +52,12 @@ public class armory {
         masWeapon.indexOf(i);
      // int mas[];
       int ind = masWeapon.indexOf(i);
-     // mas = new int [ind];
-
-      weapon index = masWeapon.get(ind);
-      System.out.println(index);
+     //return ind;
+inq = ind;
+      //weapon index = masWeapon.get(ind);
+      //System.out.println(index);
+  }
+  public int getindex(){
+        return inq;
   }
 }
