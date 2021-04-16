@@ -9,6 +9,15 @@ import java.util.Scanner;
 
 public class laba_2_2 {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Сколько оружия вы хотите добавить?:");
+        int n, mas[];
+        n=in.nextInt();
+        mas = new int[n];
+        for (n=0; n< mas.length; n++){
+            System.out.println("Введите"+ (n+1)+ "оружие: ");
+
+        }
 
     }
 }
