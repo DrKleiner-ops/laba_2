@@ -43,6 +43,27 @@ public class armory {
         }
     }
 
+    public void numberOfFire() {
+        int n = 0;
+        for (weapon a : masWeapon){
+            if (a instanceof firearm)
+                n++;
+        }
+        System.out.println("Огнестрельного оружия в оружейной "+n);
+
+    }
+
+
+    public void numberOfMelee() {
+        int n = 0;
+        for (weapon a : masWeapon){
+            if (a instanceof meleeWeapon)
+                n++;
+        }
+        System.out.println("Холодного оружия в оружейной "+n);
+
+    }
+
     public void remArmory(weapon r) {
         masWeapon.remove(r);
 

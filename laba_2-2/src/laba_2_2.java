@@ -14,7 +14,7 @@ public class laba_2_2 {
         boolean p = true;
         armory myArmory = new armory();
         while (p) {
-            System.out.println("Огнестрельное? (true/false): ");
+            System.out.print("Огнестрельное? (true/false): ");
             o = in.nextBoolean();
 
             if (o) {
@@ -31,9 +31,11 @@ public class laba_2_2 {
                 myArmory.weaponIndex(myMelee);
             }
 
-            System.out.println("Добавить еще оружие? (true/false): ");
+            System.out.print("Добавить еще оружие? (true/false): ");
             p = in.nextBoolean();
         }
         myArmory.printArmory();
+        myArmory.numberOfFire();
+        myArmory.numberOfMelee();
     }
 }
