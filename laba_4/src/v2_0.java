@@ -8,7 +8,7 @@ public class v2_0 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("FrameDemo");// создаем окно с заголовком FrameDemo
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500,400);//задаем размер окна
+        frame.setSize(500, 400);//задаем размер окна
         setNorth(frame); //вызываем метод для заполнения верхней области
         setWest(frame); //вызываем метод для заполнения левой области
         setEast(frame); //вызываем метод для заполнения правой области
@@ -18,8 +18,9 @@ public class v2_0 {
         frame.pack(); //упаковываем его
         frame.setMinimumSize(frame.getSize());
     }
-    public static void setNorth(JFrame fr){ //метод для заполнения верхней области
-        JPanel myPanel1=new JPanel();
+
+    public static void setNorth(JFrame fr) { //метод для заполнения верхней области
+        JPanel myPanel1 = new JPanel();
         myPanel1.setLayout(new FlowLayout());
         myPanel1.add(new JButton("Кнопка 1"));
         JButton myButton2 = new JButton
@@ -27,10 +28,11 @@ public class v2_0 {
         Component horizontalStrut = Box.createHorizontalStrut(40);
         myPanel1.add(horizontalStrut);
         myPanel1.add(myButton2);
-        fr.add(myPanel1,BorderLayout.NORTH);
+        fr.add(myPanel1, BorderLayout.NORTH);
     }
-    public static void setWest(JFrame fr){ //метод для заполнения левой области
-        Box myBox1=new Box(BoxLayout.Y_AXIS);
+
+    public static void setWest(JFrame fr) { //метод для заполнения левой области
+        Box myBox1 = new Box(BoxLayout.Y_AXIS);
         myBox1.add(Box.createVerticalStrut(20));
         myBox1.add(new JLabel("Метка1"));
         myBox1.add(Box.createVerticalGlue());
@@ -38,64 +40,67 @@ public class v2_0 {
         myBox1.add(Box.createVerticalGlue());
         myBox1.add(new JCheckBox("Выбор"));
         myBox1.add(Box.createVerticalStrut(20));
-        fr.add(myBox1,BorderLayout.WEST);
+        fr.add(myBox1, BorderLayout.WEST);
     }
-    public static void setEast(JFrame fr){ //метод для заполнения правой области
-        ButtonGroup myGroup=new ButtonGroup();
-        JPanel myPanel2=new JPanel();
-        ArrayList<JRadioButton> masRB=new ArrayList<JRadioButton>();
-        myPanel2.setLayout(new GridLayout(3,2));
-        for (int i=0;i<6;i++){
-            masRB.add(new JRadioButton("Выбор "+(i+1)));
+
+    public static void setEast(JFrame fr) { //метод для заполнения правой области
+        ButtonGroup myGroup = new ButtonGroup();
+        JPanel myPanel2 = new JPanel();
+        ArrayList<JRadioButton> masRB = new ArrayList<JRadioButton>();
+        myPanel2.setLayout(new GridLayout(3, 2));
+        for (int i = 0; i < 6; i++) {
+            masRB.add(new JRadioButton("Выбор " + (i + 1)));
             myGroup.add(masRB.get(i));
             myPanel2.add(masRB.get(i));
         }
         masRB.get(0).setSelected(true);
-        fr.add(myPanel2,BorderLayout.EAST);
+        fr.add(myPanel2, BorderLayout.EAST);
     }
-    public static void setCenter(JFrame fr){ //метод для заполнения центральной области
-        fr.add(new JTextArea(),BorderLayout.CENTER);
+
+    public static void setCenter(JFrame fr) { //метод для заполнения центральной области
+        fr.add(new JTextArea(), BorderLayout.CENTER);
     }
-    public static void setSouth(JFrame fr){ //метод для заполнения нижней области
-        fr.add(new JTextField(),BorderLayout.SOUTH);
+
+    public static void setSouth(JFrame fr) { //метод для заполнения нижней области
+        fr.add(new JTextField(), BorderLayout.SOUTH);
 
     }
 
-    public static void setCombo(JFrame fr){  //Creates default data model as empty list of objects.
-        JComboBox myCombo=new JComboBox();
+    public static void setCombo(JFrame fr) {  //Creates default data model as empty list of objects.
+        JComboBox myCombo = new JComboBox();
         for (int i = 0; i < 5; i++) {
-            myCombo.addItem("Элемент списка "+(i+1));
+            myCombo.addItem("Элемент списка " + (i + 1));
 
         }
     }
 
-    public static void setList(JFrame fr){  //Constructs a JList that displays the elements in the specified array.
+    public static void setList(JFrame fr) {  //Constructs a JList that displays the elements in the specified array.
         String[] data = {"one", "two", "three", "four"};
-        JList myList=new JList(data);
+        JList myList = new JList(data);
     }
 
-    public static void setPassword(JFrame fr){  //Метод для добавления скрытого поля ввода текста.
-        JPasswordField myPass=new JPasswordField();
+    public static void setPassword(JFrame fr) {  //Метод для добавления скрытого поля ввода текста.
+        JPasswordField myPass = new JPasswordField();
     }
 
-    public static void  setProgBar(JFrame fr){  //A component that visually displays the progress of some task.
+    public static void setProgBar(JFrame fr) {  //A component that visually displays the progress of some task.
         // As the task progresses towards completion, the progress bar displays the task's percentage of completion.
-        JProgressBar myProgress=new JProgressBar();
+        JProgressBar myProgress = new JProgressBar();
     }
 
-    public static void setSlider(JFrame fr){    //A component that lets the user graphically select a value by sliding a knob within a bounded interval.
-        JSlider mySlider=new JSlider();
+    public static void setSlider(JFrame fr) {    //A component that lets the user graphically select a value by sliding a knob within a bounded interval.
+        JSlider mySlider = new JSlider();
     }
 
-    public static void setSpinner(JFrame fr){   //A single line input field that lets the user select a number or an object value from an ordered sequence.
-        JSpinner mySpinner=new JSpinner();
+    public static void setSpinner(JFrame fr) {   //A single line input field that lets the user select a number or an object value from an ordered sequence.
+        JSpinner mySpinner = new JSpinner();
     }
 
-    public static void setTable(JFrame fr){     //he JTable is used to display and edit regular two-dimensional tables of cells.
-        JTable myTable=new JTable();
+    public static void setTable(JFrame fr) {     //he JTable is used to display and edit regular two-dimensional tables of cells.
+        JTable myTable = new JTable();
     }
 
-    public static void setTree(JFrame fr){
-        JTree myTree=new JTree();
+    public static void setTree(JFrame fr) {
+        JTree myTree = new JTree();
     }
 }
