@@ -4,7 +4,7 @@ import javax.swing.*;
 
 //Выписать все классы и методы, использованные в примере, и их описание из справки, и еще несколько полезных методов для каждого класса.
 
-public class v2_0 {
+public class laba_4_2 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("FrameDemo");// создаем окно с заголовком FrameDemo
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -19,7 +19,8 @@ public class v2_0 {
         frame.setMinimumSize(frame.getSize());
     }
     public static void setNorth(JFrame fr){ //метод для заполнения верхней области
-        JPanel myPanel1=new JPanel();
+        fr.add(new JTextField(),BorderLayout.NORTH);
+        /**JPanel myPanel1=new JPanel();
         myPanel1.setLayout(new FlowLayout());
         myPanel1.add(new JButton("Кнопка 1"));
         JButton myButton2 = new JButton
@@ -27,7 +28,7 @@ public class v2_0 {
         Component horizontalStrut = Box.createHorizontalStrut(40);
         myPanel1.add(horizontalStrut);
         myPanel1.add(myButton2);
-        fr.add(myPanel1,BorderLayout.NORTH);
+        fr.add(myPanel1,BorderLayout.NORTH);**/
     }
     public static void setWest(JFrame fr){ //метод для заполнения левой области
         Box myBox1=new Box(BoxLayout.Y_AXIS);
