@@ -19,16 +19,17 @@ public class laba_4_2 {
         frame.setMinimumSize(frame.getSize());
     }
     public static void setNorth(JFrame fr){ //метод для заполнения верхней области
-        fr.add(new JTextField(),BorderLayout.NORTH);
-        /**JPanel myPanel1=new JPanel();
+        //fr.add(new JTextField(),BorderLayout.NORTH);
+        JPanel myPanel1=new JPanel();
         myPanel1.setLayout(new FlowLayout());
         myPanel1.add(new JButton("Кнопка 1"));
         JButton myButton2 = new JButton
-                ("<html><b><font color=\"red\" size=14>Кнопка 2</font></b></html>");
+        myButton2.setPreferredSize(new Dimension(100,100));
+        //("<html><b><font color=\"red\" size=14>Кнопка 2</font></b></html>");
         Component horizontalStrut = Box.createHorizontalStrut(40);
         myPanel1.add(horizontalStrut);
         myPanel1.add(myButton2);
-        fr.add(myPanel1,BorderLayout.NORTH);**/
+        fr.add(myPanel1,BorderLayout.NORTH);
     }
     public static void setWest(JFrame fr){ //метод для заполнения левой области
         Box myBox1=new Box(BoxLayout.Y_AXIS);
