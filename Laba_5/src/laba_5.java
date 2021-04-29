@@ -3,12 +3,20 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.*;
+import java.awt.event.*;
+
+import javax.swing.event.ChangeListener;
 
 //Выписать все классы и методы, использованные в примере, и их описание из справки, и еще несколько полезных методов для каждого класса.
 
 public class laba_5 {
     public static JLabel myLabel;
     public static void main(String[] args) {
+        new laba_5();
+
+    }
+
+    public laba_5() {
 
         JFrame frame = new JFrame("FrameDemo");// создаем окно с заголовком FrameDemo
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,7 +37,7 @@ public class laba_5 {
     public static void setNorth(JFrame fr) { //метод для заполнения верхней области
         Box myBox = new Box(BoxLayout.X_AXIS);
         myBox.add(Box.createHorizontalGlue());
-        myBox.add(new JLabel("Метка1"));
+        myBox.add(new JLabel("Лаба 5"));
         myBox.add(Box.createHorizontalGlue());
         fr.add(myBox, BorderLayout.NORTH);
         /**JPanel myPanel1=new JPanel();
@@ -88,6 +96,7 @@ public class laba_5 {
             myGroup.add(masRB.get(i));
             myPanel2.add(masRB.get(i));
             myButton.addMouseListener(new MyMouseAdapter2());
+            myButton.
             if (i == 7) break;
             myPanel2.add(Box.createHorizontalStrut(54));
         }
@@ -147,6 +156,6 @@ public class laba_5 {
 class MyMouseAdapter2 extends MouseAdapter { //создаем свой класс-слушатель, наследуя его от
     //MouseAdapter, что позволяет нам переопределить только нужный нам метод
     public void mouseEntered(MouseEvent e) {
-        myAction3.myLabel.setText(e.getComponent().getClass().toString());
+        laba_5.myLabel.setText(e.getComponent().getClass().toString());
     }
 }
