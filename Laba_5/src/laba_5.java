@@ -11,7 +11,7 @@ import javax.swing.event.ChangeListener;
 
 public class laba_5 {
     public static JLabel myLabel;
-    public static JTextArea area;
+    public static JTextArea area= new JTextArea(13, 13);
     public static void main(String[] args) {
         new laba_5();
 
@@ -23,7 +23,7 @@ public class laba_5 {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 800);//задаем размер окна
         setNorth(frame); //вызываем метод для заполнения верхней области
-        JTextArea area = new JTextArea(13, 13);
+        //JTextArea area = new JTextArea(13, 13);
         area.setLineWrap(true);
         area.setWrapStyleWord(true);
         frame.add(area, BorderLayout.WEST);
@@ -103,7 +103,7 @@ public class laba_5 {
         area.setLineWrap(true);
         area.setWrapStyleWord(true);
         fr.add(area, BorderLayout.WEST);
-        area.addMouseListener(new MyMouseAdapter2());
+        area.addMouseListener(new MyMouseAdapter2());*/
 
 
         /**Box myBox1=new Box(BoxLayout.Y_AXIS);
@@ -114,8 +114,9 @@ public class laba_5 {
          myBox1.add(Box.createVerticalGlue());
          myBox1.add(new JCheckBox("Выбор"));
          myBox1.add(Box.createVerticalStrut(20));
-         fr.add(myBox1,BorderLayout.WEST);*
-    }*/
+         fr.add(myBox1,BorderLayout.WEST);
+    }
+     */
 
     public static void setEast(JFrame fr) { //метод для заполнения правой области
         /**ButtonGroup myGroup=new ButtonGroup();
@@ -153,7 +154,7 @@ public class laba_5 {
             myButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    //area.setText(e.getActionCommand());
+                    area.setText(e.getActionCommand());
 
                 }
             });
@@ -234,23 +235,26 @@ class MyWindowListener extends WindowAdapter{
 
         @Override
         public void windowIconified(WindowEvent e) {
+            //laba_5.area.setText("Окно развернуто");
+
 
         }
 
         @Override
         public void windowDeiconified(WindowEvent e) {
+            laba_5.area.setText("Окно было свернуто");
 
         }
 
         @Override
         public void windowActivated(WindowEvent e) {
-            laba_5.area.setText("Окно развернуто");
+            //laba_5.area.setText("Окно развернуто");
 
         }
 
         @Override
         public void windowDeactivated(WindowEvent e) {
-            laba_5.area.setText("Окно свернуто");
+            laba_5.area.setText("Окно перестало быть активным");
 
         }
 
