@@ -22,14 +22,56 @@ public class laba_5 {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 800);//задаем размер окна
         setNorth(frame); //вызываем метод для заполнения верхней области
-        setWest(frame); //вызываем метод для заполнения левой области
+        JTextArea area = new JTextArea(13, 13);
+        area.setLineWrap(true);
+        area.setWrapStyleWord(true);
+        frame.add(area, BorderLayout.WEST);
+        area.addMouseListener(new MyMouseAdapter2());
+        // setWest(frame); //вызываем метод для заполнения левой области
         //setEast(frame); //вызываем метод для заполнения правой области
         setCenter(frame); //вызываем метод для заполнения центральной области
         //setSouth(frame); //вызываем метод для заполнения нижней области
         myLabel=new JLabel(" ");
         frame.add(myLabel,BorderLayout.SOUTH);
         myLabel.addMouseListener(new MyMouseAdapter2());
+        frame.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                area.setText("Приложение открыто");
+            }
 
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+                area.setText("Окно развернуто");
+
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+                area.setText("Окно свернуто");
+
+            }
+        });
         frame.setVisible(true);//делаем окно видимым
         frame.pack(); //упаковываем его
         frame.setMinimumSize(frame.getSize());
@@ -54,7 +96,7 @@ public class laba_5 {
          fr.add(myPanel1,BorderLayout.NORTH);*/
     }
 
-    public static void setWest(JFrame fr) { //метод для заполнения левой области
+    /**public static void setWest(JFrame fr) { //метод для заполнения левой области
         JTextArea area = new JTextArea(13, 13);
         area.setLineWrap(true);
         area.setWrapStyleWord(true);
@@ -70,8 +112,8 @@ public class laba_5 {
          myBox1.add(Box.createVerticalGlue());
          myBox1.add(new JCheckBox("Выбор"));
          myBox1.add(Box.createVerticalStrut(20));
-         fr.add(myBox1,BorderLayout.WEST);*/
-    }
+         fr.add(myBox1,BorderLayout.WEST);*
+    }*/
 
     public static void setEast(JFrame fr) { //метод для заполнения правой области
         /**ButtonGroup myGroup=new ButtonGroup();
@@ -88,11 +130,16 @@ public class laba_5 {
     }
 
     public static void setCenter(JFrame fr) { //метод для заполнения центральной области
-
+        /**JTextArea area = new JTextArea(13, 13);
+        area.setLineWrap(true);
+        area.setWrapStyleWord(true);
+        fr.add(area, BorderLayout.WEST);
+        area.addMouseListener(new MyMouseAdapter2());*/
         ButtonGroup myGroup = new ButtonGroup();
         JPanel myPanel2 = new JPanel();
         ArrayList<JButton> masRB = new ArrayList<JButton>();
         myPanel2.setLayout(new GridLayout(5, 3));
+
         myPanel2.addMouseListener(new MyMouseAdapter2());
         for (int i = 0; i < 8; i++) {
             JButton myButton = new JButton("Кнопка " + (i + 1));
@@ -104,7 +151,7 @@ public class laba_5 {
             myButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    area.setText(e.getActionCommand())
+                    //area.setText(e.getActionCommand());
 
                 }
             });
@@ -166,7 +213,11 @@ public class laba_5 {
 
 
 }
-
+/**class MyWindowListener extends WindowAdapter{
+    public void windowActivated(WindowEvent e){
+        laba_5.area.]
+    }
+}*/
 class MyMouseAdapter2 extends MouseAdapter { //создаем свой класс-слушатель, наследуя его от
     //MouseAdapter, что позволяет нам переопределить только нужный нам метод
     public void mouseEntered(MouseEvent e) {
