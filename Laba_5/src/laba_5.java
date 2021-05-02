@@ -96,7 +96,7 @@ public class laba_5 {
             myGroup.add(masRB.get(i));
             myPanel2.add(masRB.get(i));
             myButton.addMouseListener(new MyMouseAdapter2());
-            myButton.
+
             if (i == 7) break;
             myPanel2.add(Box.createHorizontalStrut(54));
         }
