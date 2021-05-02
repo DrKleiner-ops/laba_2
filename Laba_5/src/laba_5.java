@@ -28,6 +28,7 @@ public class laba_5 {
         //setSouth(frame); //вызываем метод для заполнения нижней области
         myLabel=new JLabel(" ");
         frame.add(myLabel,BorderLayout.SOUTH);
+        myLabel.addMouseListener(new MyMouseAdapter2());
 
         frame.setVisible(true);//делаем окно видимым
         frame.pack(); //упаковываем его
@@ -40,6 +41,7 @@ public class laba_5 {
         myBox.add(new JLabel("Лаба 5"));
         myBox.add(Box.createHorizontalGlue());
         fr.add(myBox, BorderLayout.NORTH);
+        myBox.addMouseListener(new MyMouseAdapter2());
         /**JPanel myPanel1=new JPanel();
          myPanel1.setLayout(new FlowLayout());
          myPanel1.add(new JButton("Кнопка 1"));
@@ -57,6 +59,7 @@ public class laba_5 {
         area.setLineWrap(true);
         area.setWrapStyleWord(true);
         fr.add(area, BorderLayout.WEST);
+        area.addMouseListener(new MyMouseAdapter2());
 
 
         /**Box myBox1=new Box(BoxLayout.Y_AXIS);
@@ -85,10 +88,12 @@ public class laba_5 {
     }
 
     public static void setCenter(JFrame fr) { //метод для заполнения центральной области
+
         ButtonGroup myGroup = new ButtonGroup();
         JPanel myPanel2 = new JPanel();
         ArrayList<JButton> masRB = new ArrayList<JButton>();
         myPanel2.setLayout(new GridLayout(5, 3));
+        myPanel2.addMouseListener(new MyMouseAdapter2());
         for (int i = 0; i < 8; i++) {
             JButton myButton = new JButton("Кнопка " + (i + 1));
             myButton.setPreferredSize(new Dimension(90, 54));
@@ -96,7 +101,13 @@ public class laba_5 {
             myGroup.add(masRB.get(i));
             myPanel2.add(masRB.get(i));
             myButton.addMouseListener(new MyMouseAdapter2());
-            myButton.
+            myButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    area.setText(e.getActionCommand())
+
+                }
+            });
             if (i == 7) break;
             myPanel2.add(Box.createHorizontalStrut(54));
         }
@@ -151,6 +162,9 @@ public class laba_5 {
     public static void setTree(JFrame fr) {
         JTree myTree = new JTree();
     }
+
+
+
 }
 
 class MyMouseAdapter2 extends MouseAdapter { //создаем свой класс-слушатель, наследуя его от
