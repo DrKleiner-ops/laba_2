@@ -11,6 +11,7 @@ import javax.swing.event.ChangeListener;
 
 public class laba_5 {
     public static JLabel myLabel;
+    public static JTextArea area;
     public static void main(String[] args) {
         new laba_5();
 
@@ -34,7 +35,8 @@ public class laba_5 {
         myLabel=new JLabel(" ");
         frame.add(myLabel,BorderLayout.SOUTH);
         myLabel.addMouseListener(new MyMouseAdapter2());
-        frame.addWindowListener(new WindowListener() {
+        frame.addWindowListener(new MyWindowListener());
+        /**frame.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
                 area.setText("Приложение открыто");
@@ -71,7 +73,7 @@ public class laba_5 {
                 area.setText("Окно свернуто");
 
             }
-        });
+        });*/
         frame.setVisible(true);//делаем окно видимым
         frame.pack(); //упаковываем его
         frame.setMinimumSize(frame.getSize());
@@ -213,11 +215,48 @@ public class laba_5 {
 
 
 }
-/**class MyWindowListener extends WindowAdapter{
-    public void windowActivated(WindowEvent e){
-        laba_5.area.]
+class MyWindowListener extends WindowAdapter{
+
+        @Override
+        public void windowOpened(WindowEvent e) {
+            laba_5.area.setText("Приложение открыто");
+        }
+
+        @Override
+        public void windowClosing(WindowEvent e) {
+
+        }
+
+        @Override
+        public void windowClosed(WindowEvent e) {
+
+        }
+
+        @Override
+        public void windowIconified(WindowEvent e) {
+
+        }
+
+        @Override
+        public void windowDeiconified(WindowEvent e) {
+
+        }
+
+        @Override
+        public void windowActivated(WindowEvent e) {
+            laba_5.area.setText("Окно развернуто");
+
+        }
+
+        @Override
+        public void windowDeactivated(WindowEvent e) {
+            laba_5.area.setText("Окно свернуто");
+
+        }
+
+
     }
-}*/
+
 class MyMouseAdapter2 extends MouseAdapter { //создаем свой класс-слушатель, наследуя его от
     //MouseAdapter, что позволяет нам переопределить только нужный нам метод
     public void mouseEntered(MouseEvent e) {
