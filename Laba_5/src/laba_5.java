@@ -11,7 +11,8 @@ import javax.swing.event.ChangeListener;
 
 public class laba_5 {
     public static JLabel myLabel;
-    public static JTextArea area= new JTextArea(13, 13);
+    public static JTextArea area = new JTextArea(13, 13);
+
     public static void main(String[] args) {
         new laba_5();
 
@@ -32,47 +33,40 @@ public class laba_5 {
         //setEast(frame); //вызываем метод для заполнения правой области
         setCenter(frame); //вызываем метод для заполнения центральной области
         //setSouth(frame); //вызываем метод для заполнения нижней области
-        myLabel=new JLabel(" ");
-        frame.add(myLabel,BorderLayout.SOUTH);
+        myLabel = new JLabel(" ");
+        frame.add(myLabel, BorderLayout.SOUTH);
         myLabel.addMouseListener(new MyMouseAdapter2());
         frame.addWindowListener(new MyWindowListener());
         /**frame.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {
-                area.setText("Приложение открыто");
-            }
+        @Override public void windowOpened(WindowEvent e) {
+        area.setText("Приложение открыто");
+        }
 
-            @Override
-            public void windowClosing(WindowEvent e) {
+        @Override public void windowClosing(WindowEvent e) {
 
-            }
+        }
 
-            @Override
-            public void windowClosed(WindowEvent e) {
+        @Override public void windowClosed(WindowEvent e) {
 
-            }
+        }
 
-            @Override
-            public void windowIconified(WindowEvent e) {
+        @Override public void windowIconified(WindowEvent e) {
 
-            }
+        }
 
-            @Override
-            public void windowDeiconified(WindowEvent e) {
+        @Override public void windowDeiconified(WindowEvent e) {
 
-            }
+        }
 
-            @Override
-            public void windowActivated(WindowEvent e) {
-                area.setText("Окно развернуто");
+        @Override public void windowActivated(WindowEvent e) {
+        area.setText("Окно развернуто");
 
-            }
+        }
 
-            @Override
-            public void windowDeactivated(WindowEvent e) {
-                area.setText("Окно свернуто");
+        @Override public void windowDeactivated(WindowEvent e) {
+        area.setText("Окно свернуто");
 
-            }
+        }
         });*/
         frame.setVisible(true);//делаем окно видимым
         frame.pack(); //упаковываем его
@@ -99,23 +93,24 @@ public class laba_5 {
     }
 
     /**public static void setWest(JFrame fr) { //метод для заполнения левой области
-        JTextArea area = new JTextArea(13, 13);
-        area.setLineWrap(true);
-        area.setWrapStyleWord(true);
-        fr.add(area, BorderLayout.WEST);
-        area.addMouseListener(new MyMouseAdapter2());*/
+     JTextArea area = new JTextArea(13, 13);
+     area.setLineWrap(true);
+     area.setWrapStyleWord(true);
+     fr.add(area, BorderLayout.WEST);
+     area.addMouseListener(new MyMouseAdapter2());*/
 
 
-        /**Box myBox1=new Box(BoxLayout.Y_AXIS);
-         myBox1.add(Box.createVerticalStrut(20));
-         myBox1.add(new JLabel("Метка1"));
-         myBox1.add(Box.createVerticalGlue());
-         myBox1.add(new JLabel("Метка2"));
-         myBox1.add(Box.createVerticalGlue());
-         myBox1.add(new JCheckBox("Выбор"));
-         myBox1.add(Box.createVerticalStrut(20));
-         fr.add(myBox1,BorderLayout.WEST);
-    }
+    /**
+     * Box myBox1=new Box(BoxLayout.Y_AXIS);
+     * myBox1.add(Box.createVerticalStrut(20));
+     * myBox1.add(new JLabel("Метка1"));
+     * myBox1.add(Box.createVerticalGlue());
+     * myBox1.add(new JLabel("Метка2"));
+     * myBox1.add(Box.createVerticalGlue());
+     * myBox1.add(new JCheckBox("Выбор"));
+     * myBox1.add(Box.createVerticalStrut(20));
+     * fr.add(myBox1,BorderLayout.WEST);
+     * }
      */
 
     public static void setEast(JFrame fr) { //метод для заполнения правой области
@@ -134,10 +129,10 @@ public class laba_5 {
 
     public static void setCenter(JFrame fr) { //метод для заполнения центральной области
         /**JTextArea area = new JTextArea(13, 13);
-        area.setLineWrap(true);
-        area.setWrapStyleWord(true);
-        fr.add(area, BorderLayout.WEST);
-        area.addMouseListener(new MyMouseAdapter2());*/
+         area.setLineWrap(true);
+         area.setWrapStyleWord(true);
+         fr.add(area, BorderLayout.WEST);
+         area.addMouseListener(new MyMouseAdapter2());*/
         ButtonGroup myGroup = new ButtonGroup();
         JPanel myPanel2 = new JPanel();
         ArrayList<JButton> masRB = new ArrayList<JButton>();
@@ -154,7 +149,7 @@ public class laba_5 {
             myButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    area.setText(e.getActionCommand());
+                    area.append("\n" + e.getActionCommand());
 
                 }
             });
@@ -166,14 +161,16 @@ public class laba_5 {
         //fr.add(new JTextArea(),BorderLayout.CENTER);
     }
 
-    /**public static void setSouth(JFrame fr) { //метод для заполнения нижней области
-        Box myBox = new Box(BoxLayout.X_AXIS);
-        myBox.add(Box.createHorizontalGlue());
-        myBox.add(new JLabel("Метка1"));
-        myBox.add(Box.createHorizontalGlue());
-        fr.add(myBox, BorderLayout.SOUTH);
-
-    }*/
+    /**
+     * public static void setSouth(JFrame fr) { //метод для заполнения нижней области
+     * Box myBox = new Box(BoxLayout.X_AXIS);
+     * myBox.add(Box.createHorizontalGlue());
+     * myBox.add(new JLabel("Метка1"));
+     * myBox.add(Box.createHorizontalGlue());
+     * fr.add(myBox, BorderLayout.SOUTH);
+     * <p>
+     * }
+     */
 
     public static void setCombo(JFrame fr) {  //Creates default data model as empty list of objects.
         JComboBox myCombo = new JComboBox();
@@ -214,52 +211,52 @@ public class laba_5 {
     }
 
 
-
 }
-class MyWindowListener extends WindowAdapter{
 
-        @Override
-        public void windowOpened(WindowEvent e) {
-            laba_5.area.setText("Приложение открыто");
-        }
+class MyWindowListener extends WindowAdapter {
 
-        @Override
-        public void windowClosing(WindowEvent e) {
+    @Override
+    public void windowOpened(WindowEvent e) {
+        laba_5.area.setText("Приложение открыто");
+    }
 
-        }
+    @Override
+    public void windowClosing(WindowEvent e) {
 
-        @Override
-        public void windowClosed(WindowEvent e) {
+    }
 
-        }
+    @Override
+    public void windowClosed(WindowEvent e) {
 
-        @Override
-        public void windowIconified(WindowEvent e) {
-            //laba_5.area.setText("Окно развернуто");
+    }
 
-
-        }
-
-        @Override
-        public void windowDeiconified(WindowEvent e) {
-            laba_5.area.setText("Окно было свернуто");
-
-        }
-
-        @Override
-        public void windowActivated(WindowEvent e) {
-            //laba_5.area.setText("Окно развернуто");
-
-        }
-
-        @Override
-        public void windowDeactivated(WindowEvent e) {
-            laba_5.area.setText("Окно перестало быть активным");
-
-        }
+    @Override
+    public void windowIconified(WindowEvent e) {
+        //laba_5.area.setText("Окно развернуто");
 
 
     }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+        laba_5.area.setText("Окно было свернуто");
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+        //laba_5.area.setText("Окно развернуто");
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+        laba_5.area.setText("Окно перестало быть активным");
+
+    }
+
+
+}
 
 class MyMouseAdapter2 extends MouseAdapter { //создаем свой класс-слушатель, наследуя его от
     //MouseAdapter, что позволяет нам переопределить только нужный нам метод
