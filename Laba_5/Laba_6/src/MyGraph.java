@@ -14,7 +14,7 @@ public class MyGraph extends JFrame implements ActionListener {
 
 
         super(s);//вызываем конструктор суперкласса и передаем ему параметр
-        String[] sog = {"К","Л","М","Ш","Н"};
+        //String[] sog = {"К","Л","М","Ш","Н"};
         String[] gl = {"И"};
         JMenuBar myMenuBar = new JMenuBar();// создаем строку меню
         JMenu menu1 = new JMenu("Буквы");//создаем первый пункт меню
@@ -22,7 +22,7 @@ public class MyGraph extends JFrame implements ActionListener {
         menu1.add(first);//добавляем подпункт в первый пункт меню
         JMenuItem[] first_1 = new JMenuItem[5];// создаем массив из трех подпунктов меню
         for (int i = 0; i < 5; i++) { //в цикле создается каждый подпункт, добавляется в нужное место меню
-            first_1[i] = new JMenuItem(sog[i]);
+            first_1[i] = new JMenuItem(JMyPanel.Figure.values()[(i+5)].toString());
             first.add(first_1[i]);
             first_1[i].addActionListener(this);//и к нему подключаем слушатель, описанный в конце
         } //класса
@@ -30,7 +30,7 @@ public class MyGraph extends JFrame implements ActionListener {
         menu1.add(second); //добавляем его в меню
         JMenuItem[] second_1 = new JMenuItem[1]; // создаем массив из трех подпунктов меню
         for (int i = 0; i < 1; i++) { // и т.д.
-            second_1[i] = new JMenuItem(gl[i]);
+            second_1[i] = new JMenuItem(JMyPanel.Figure.values()[10].toString());
             second.add(second_1[i]);
             second_1[i].addActionListener(this);
         }
