@@ -35,7 +35,14 @@ public class MyGraph extends JFrame implements ActionListener {
             second_1[i].addActionListener(this);
         }
         JMenu menu2 = new JMenu("Фигуры"); //создаем второй пункт меню и далее аналогично первому
-        JMenu first2 = new JMenu("Пункт2_1");
+        for (int i = 0; i < 4; i++) {
+            JMenuItem fig =new JMenuItem(JMyPanel.Figure.values()[i].toString());
+            menu2.add(fig);
+            fig.addActionListener(this);
+        }
+        JButton clear = new JButton(JMyPanel.Figure.values()[4].toString());
+        clear.addActionListener(this);
+        /**JMenu first2 = new JMenu("Пункт2_1");
         menu2.add(first2);
         JMenuItem[] first2_1 = new JMenuItem[3];
         for (int i = 0; i < 3; i++) {
@@ -50,11 +57,13 @@ public class MyGraph extends JFrame implements ActionListener {
             second2_1[i] = new JMenuItem("Пункт2_2_" + (i + 1));
             second2.add(second2_1[i]);
             second2_1[i].addActionListener(this);
-        }
+        }*/
         myMenuBar.add(menu1); //в строку меню добавляем главные пункты меню
         myMenuBar.add(menu2);
+        myMenuBar.add(Box.createHorizontalGlue());
+        myMenuBar.add(clear);
         setJMenuBar(myMenuBar); //устанавливаем для окна созданное меню
-        Box myBox = new Box(BoxLayout.X_AXIS);//создаем компоновку в виде горизонтального ящика
+        /**Box myBox = new Box(BoxLayout.X_AXIS);//создаем компоновку в виде горизонтального ящика
         JButton[] figs = new JButton[5]; //массив кнопок
         for (int i = 0; i < 5; i++) {
 //каждая кнопка создается с параметром надписи на ней, надпись берется из перечисления,
@@ -70,11 +79,12 @@ public class MyGraph extends JFrame implements ActionListener {
         }
         myBox.setAlignmentX(CENTER_ALIGNMENT);//устанавливаем для компоновки выравнивание по центру
 //хотя в нашем случае это не важно, т.к. мы используем пружины
+        */
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        add(myBox, BorderLayout.NORTH);
+        //add(myBox, BorderLayout.NORTH);
         add(myPanel, BorderLayout.CENTER);
         Dimension size = getSize();//записываем в переменную size текущий размер окна
-        size.setSize(size.width, size.height + 200);//устанавливаем новый размер окна, увеличивая
+        size.setSize(size.width+500, size.height + 200);//устанавливаем новый размер окна, увеличивая
 //текущий по высоте на 200
         setMinimumSize(size);
         pack();
