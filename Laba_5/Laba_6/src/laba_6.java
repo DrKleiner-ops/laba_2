@@ -1,2 +1,2 @@
-public class laba_6 +с{
+public class laba_6{
 }
