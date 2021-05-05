@@ -134,6 +134,9 @@ public class JMyPanel extends JPanel { // наш класс является н�
                 g.drawLine(60, 20, 60, 80);
                 break;
         }
-    }
 
+    }
+    public void Randomcol (Graphics gr){
+        gr.setColor();
+    }
 }
