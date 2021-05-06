@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.HashMap;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -11,6 +12,8 @@ public class ListWork extends JFrame{
     JPanel panel1=null;
     private static Image image;
     static File f1;
+    private static HashMap<String, String> myHash=new HashMap<String, String>(); //наш HashMap
+    static JPopupMenu myPopup; //контекстное меню
 
     public static void main(String[] args) {
         ListWork window= new ListWork("Работа со списком");
@@ -142,6 +145,25 @@ public class ListWork extends JFrame{
         myBox2.add(button4);//добавляем кнопку на компоновку
         add(myBox2,BorderLayout.SOUTH);//вставляем компоновку в нижнюю область окна
 
+        myPopup=new JPopupMenu(); //создаем контекстное меню
+        JMenuItem myItem1=new JMenuItem("Связать с картинкой"); //создаем пункт контекстного меню
+        myItem1.addActionListener(new ActionListener() { //добавляем к нему слушателя
+            public void actionPerformed(ActionEvent e) {
+                loadFromFile(myList.getSelectedValue().toString()); //вызываем функцию, которую создадим ниже,
+                //ей передаем название выбранного пункта списка
+            }
+
+            private void loadFromFile(String toString) {
+            }
+        });
+        myPopup.add(myItem1); //добавляем созданный пункт к контекстному меню
+        myList.setComponentPopupMenu(myPopup); //устанавливаем созданное контекстное меню для списка
+        myList.addMouseListener(new MouseAdapter() { //добавляем к списку слушатель событий мыши
+            public void mousePressed(MouseEvent e) { //обрабатываем нажатие на клавишу мыши
+                myList.setSelectedIndex(myList.locationToIndex(e.getPoint())); //устанавливаем текущим
+//элементом списка тот, который ближе к позиции курсора мыши в момент нажатия кнопки мыши
+            }
+        });
 
 
     }
