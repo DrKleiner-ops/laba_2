@@ -21,6 +21,11 @@ public class JMyPanel extends JPanel { // наш класс является н�
     }
 
     public void paintComponent(Graphics gr) {
+        Random random = new Random();
+        Color[] colors = {Color.BLUE, Color.GREEN, Color.MAGENTA, Color.RED,
+                Color.BLACK, Color.ORANGE, Color.YELLOW};
+        int[] fil;
+        int pos = random.nextInt(colors.length);
         super.paintComponent(gr);
         Graphics2D g = (Graphics2D) gr;
         BasicStroke pen;//создаем перо, параметры которого будут определять стиль линий
@@ -30,7 +35,7 @@ public class JMyPanel extends JPanel { // наш класс является н�
 //определяем перо толщиной 20 точек, с закругленными концами линий и закругленными стыками линий
                 pen = new BasicStroke(20, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
                 g.setStroke(pen);//делаем текущим пером созданное нами
-                g.setColor(Color.blue);//задаем цвет пера
+                g.setColor(colors[pos]);//задаем цвет пера
                 g.drawLine(20, 20, 100, 100);
                 //r = r + 20;
                 break;
@@ -69,14 +74,16 @@ public class JMyPanel extends JPanel { // наш класс является н�
                 break;
             case CLEAR:
                 g.clearRect(0, 0, getSize().width, getSize().height);
-               // r = 0;
+                // r = 0;
                 break;
             case K:
 
                 float[] dash4 = {20, 20, 2, 20, 2, 20};
                 pen = new BasicStroke(20, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
                 g.setStroke(pen);//делаем текущим пером созданное нами
-                g.setColor(Color.blue);//задаем цвет пера
+                g.setPaint(new GradientPaint(random.nextInt(50), random.nextInt(50), colors[pos], 50, 50, Color.green, true));
+
+                //g.setColor(colors[pos]);//задаем цвет пера
                 g.drawLine(20, 20, 20, 80);
                 g.drawLine(20, 50, 60, 20);
                 g.drawLine(20, 50, 60, 80);
@@ -85,8 +92,9 @@ public class JMyPanel extends JPanel { // наш класс является н�
 
                 float[] dash5 = {20, 20, 2, 20, 2, 20};
                 pen = new BasicStroke(20, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
+                g.setPaint(new GradientPaint(random.nextInt(50), random.nextInt(50), colors[pos], 50, 50, Color.green, true));
                 g.setStroke(pen);//делаем текущим пером созданное нами
-                g.setColor(Color.red);//задаем цвет пера
+                //g.setColor(colors[pos]);//задаем цвет пера
                 g.drawLine(20, 80, 40, 20);
                 g.drawLine(40, 20, 60, 80);
                 break;
@@ -94,8 +102,9 @@ public class JMyPanel extends JPanel { // наш класс является н�
 
                 float[] dash6 = {20, 20, 2, 20, 2, 20};
                 pen = new BasicStroke(20, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
+                g.setPaint(new GradientPaint(random.nextInt(50), random.nextInt(50), colors[pos], 50, 50, Color.green, true));
                 g.setStroke(pen);//делаем текущим пером созданное нами
-                g.setColor(Color.red);//задаем цвет пера
+                //g.setColor(colors[pos]);//задаем цвет пера
                 g.drawLine(20, 80, 30, 20);
                 g.drawLine(30, 20, 50, 40);
                 g.drawLine(50, 40, 70, 20);
@@ -106,7 +115,8 @@ public class JMyPanel extends JPanel { // наш класс является н�
                 float[] dash7 = {20, 20, 2, 20, 2, 20};
                 pen = new BasicStroke(20, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
                 g.setStroke(pen);//делаем текущим пером созданное нами
-                g.setColor(Color.red);//задаем цвет пера
+                g.setPaint(new GradientPaint(random.nextInt(50), random.nextInt(50), colors[pos], 50, 50, Color.green, true));
+                //g.setColor(colors[pos]);//задаем цвет пера
                 g.drawLine(20, 20, 20, 80);
                 g.drawLine(20, 80, 80, 80);
                 g.drawLine(50, 20, 50, 80);
@@ -118,7 +128,8 @@ public class JMyPanel extends JPanel { // наш класс является н�
                 float[] dash8 = {20, 20, 2, 20, 2, 20};
                 pen = new BasicStroke(20, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
                 g.setStroke(pen);//делаем текущим пером созданное нами
-                g.setColor(Color.red);//задаем цвет пера
+                g.setPaint(new GradientPaint(random.nextInt(50), random.nextInt(50), colors[pos], 50, 50, Color.green, true));
+                //g.setColor(colors[pos]);//задаем цвет пера
                 g.drawLine(20, 20, 20, 80);
                 g.drawLine(60, 20, 60, 80);
                 g.drawLine(20, 50, 60, 50);
@@ -128,7 +139,8 @@ public class JMyPanel extends JPanel { // наш класс является н�
                 float[] dash9 = {20, 20, 2, 20, 2, 20};
                 pen = new BasicStroke(20, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
                 g.setStroke(pen);//делаем текущим пером созданное нами
-                g.setColor(Color.red);//задаем цвет пера
+                g.setPaint(new GradientPaint(random.nextInt(50), random.nextInt(50), colors[pos], 50, 50, Color.green, true));
+                //g.setColor(colors[pos]);//задаем цвет пера
                 g.drawLine(20, 20, 20, 80);
                 g.drawLine(20, 80, 60, 20);
                 g.drawLine(60, 20, 60, 80);
@@ -136,7 +148,17 @@ public class JMyPanel extends JPanel { // наш класс является н�
         }
 
     }
-    public void Randomcol (Graphics gr){
-        gr.setColor();
+
+    public void Randomcol(Graphics e) {
+
+        e.setColor(Color.red);
+        e.setColor(Color.blue);
+        e.setColor(Color.black);
+        e.setColor(Color.green);
+        e.setColor(Color.cyan);
+        e.setColor(Color.orange);
+        e.setColor(Color.yellow);
+
+
     }
 }
