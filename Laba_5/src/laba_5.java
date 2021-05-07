@@ -220,22 +220,6 @@ class MyWindowListener extends WindowAdapter {
         laba_5.area.setText("Приложение открыто");
     }
 
-    @Override
-    public void windowClosing(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowClosed(WindowEvent e) {
-
-    }
-
-    @Override
-    public void windowIconified(WindowEvent e) {
-        //laba_5.area.setText("Окно развернуто");
-
-
-    }
 
     @Override
     public void windowDeiconified(WindowEvent e) {
