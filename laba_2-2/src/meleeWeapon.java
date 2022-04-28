@@ -1,7 +1,13 @@
 import java.util.Scanner;
-
+/**
+ * Класс Холодное орудие -базовый класс для объектов транспорта
+ * @since 1.0
+ * @version realise
+ * @author Климшин В.И.*/
 public class meleeWeapon extends weapon {
+    /**Поле для хранения Размера холодного оружия */
     private int Size;
+    /**Поле для хранения Вида холоднрого оружия */
     private String Vid;
     private int Weight;
 
@@ -19,30 +25,51 @@ public class meleeWeapon extends weapon {
         Vid = vid;
         Weight = ves;
     }
-
+    /**
+     *  Устанавливает значение поля {@link meleeWeapon#Size}
+     *  @param dli -Длина холодного оружия */
     public void setSize(int dli) {
         Size = dli;
     }
-
+    /**
+     *  Возвращает значение поля {@link meleeWeapon#Size}
+     *  @return  целое значение длины оружия */
     public int getSize() {
         return Size;
     }
-
+    /**
+     *  Устанавливает значение поля {@link meleeWeapon#Weight}
+     *  @param ves -Вес холодного оружия */
     public void setWeight(int ves) {
         Weight = ves;
     }
-
+    /**
+     *  Возвращает значение поля {@link meleeWeapon#Weight}
+     *  @return  целое значение веса оружия */
     public int getWeight() {
         return Weight;
     }
-
+    /**
+     *  Устанавливает значение поля {@link meleeWeapon#Vid}
+     *  @param vid -Вид холодного оружия */
     public void setVid(String vid) {
         Vid = vid;
     }
-
+    /**
+     *  Возвращает значение поля {@link meleeWeapon#Vid}
+     *  @return  строку вида оружия */
     public String getVid() {
         return Vid;
     }
+
+    /**
+     *  Устанавливает все занияния для класса Холодное оружие из класса Оружие и класса Холодное оружие: 
+     * @see weapon#setSerialNumber(String) 
+     * @see weapon#setInService(boolean) 
+     * @see weapon#setProducerCountry(String)
+     * @see meleeWeapon#setSize(int) 
+     * @see meleeWeapon#setVid(String) 
+     * @see meleeWeapon#setWeight(int) */
 
     public void setAllInfoMelee() {
 

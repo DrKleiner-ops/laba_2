@@ -75,8 +75,11 @@ public class armory {
         int ind = masWeapon.indexOf(i);
         //return ind;
         inq = ind;
-        //weapon index = masWeapon.get(ind);
-        //System.out.println(index);
+        /**
+        * @deprecated As Release
+         * index = masWeapon.get(ind);
+        * System.out.println(index);
+        */
     }
 
     public int getindex() {
